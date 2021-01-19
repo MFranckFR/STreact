@@ -1,0 +1,130 @@
+/* Main css */
+/*@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');*/
+
+
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    padding: 10pt;
+    margin-left:50px;
+    margin-right:30px;
+    font-size:12pt;
+}
+
+h1{
+    position: relative;
+    float:left;
+    padding-right: 10px;
+}
+
+.red {
+color: red;
+}
+.blue {
+color: blue;
+}
+.green {
+color: green;
+}
+
+.enonce{
+    font-style:oblique;
+    color:magenta;
+}
+p.enonce:before {
+    content: "Q:";
+    display: block;
+    /* background: url("process_pink_3964305.png") no-repeat; */
+    float: left;
+    margin: 0 6px 0 0;
+}
+.reponse{
+    font-style: italic;
+}
+.reponse:before{
+    content: "R:";
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+
+.process:before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 6px 0 0;
+}
+.process{
+    color:darkslateblue;
+}
+.processed{
+    color:white;
+    background-color: black;
+    padding-left: 5px;
+}
+
+#ctnResultHello {
+    display:flex;
+    position:relative;
+    border-style: outset;
+    border-color: darkblue;
+    box-sizing:border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 5px;
+    padding:20px;
+    background-color: rgb(144, 208, 211);
+}
+
+#ctnResultHello h3{
+    text-decoration: underline;
+}
+
+#jsCode{
+    border-style: outset;
+    border-color: darkgrey;
+    box-sizing:border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 5px;
+    padding:30px;
+    background-color: lightgoldenrodyellow;
+    width:400px;
+}
+
+.key{
+    text-decoration:underline;
+}
+
+.value{
+    font-weight: bold;
+}
+
+#flipBox{
+    float:right;
+    display:flex;
+}
+.flip{
+    display: block;
+    /*transform: scaleX(-1);*/
+}
+.flop{
+    display: none
+}
+
+code
+{
+  /* font-style: italic;
+  margin-left: 32px;
+  */
+background : #f8f8f8;
+overflow : auto;
+width : auto;
+/* border : solid gray; */
+border-width : .1e m .1e m .1e m .8e m;
+padding : .2e m .6e m;
+
+
+}
+

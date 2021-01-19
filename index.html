@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>React - Hellow World</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <script src='js/main.js'></script>
+</head>
+<body>
+
+    <div id="principale"></div>
+
+    <script type="text/babel">
+    setInterval(() =>{
+        const date = new Date(Date.now());
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const date_fr = date.toLocaleDateString('fr-FR', options);
+        ReactDOM.render(<h1>React : Hello World [{date_fr}]</h1>, document.getElementById('principale'));
+    }, 1000);
+    </script>
+
+
+    <!-- React -->
+    <script src="js/babel/babel.min.js"></script>
+    <script crossorigin src="js/react@16/react.development.js"></script>
+    <script crossorigin src="js/react-dom@16/react-dom.development.js"></script>
+</body>
+</html>
