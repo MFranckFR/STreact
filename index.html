@@ -10,17 +10,23 @@
 </head>
 <body>
 
+    <div id="titre"></div>
+
+    <div id="date"></div>
     <div id="principale"></div>
     <script type="text/babel">
     class App extends React.Component {
         render(){
+            ReactDOM.render(<h1>React : Hello World</h1>, document.getElementById('titre'));
+
             setInterval(() =>{
                 const date = new Date(Date.now());
                 const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                 let date_fr = date.toLocaleDateString('fr-FR', options);
-                date_fr += ` ${date.getHours()}H ${date.getMinutes()}min ${date.getSeconds()}sec`;
-                ReactDOM.render(<h1>React : Hello World [<span className="red">{date_fr}</span>]</h1>, document.getElementById('principale'));
+                date_fr += ` ${date.getHours().padLeft()} H ${date.getMinutes().padLeft()} min ${date.getSeconds().padLeft()} sec`;
+                ReactDOM.render(<p className='red'>{date_fr}</p>, document.getElementById('date'));
             }, 1000);
+
             return true;
         }
     }
@@ -32,6 +38,8 @@
     }
    
     </script>
+
+    <button class="green" onclick="" id="btnConnect">Un bouton</button>
 
     <script type="text/babel">
 /*
