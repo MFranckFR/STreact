@@ -12,8 +12,9 @@ body{
 
 h1{
     position: relative;
-    float:left;
+    float:center;
     padding-right: 10px;
+    color: blue;
 }
 
 .red {

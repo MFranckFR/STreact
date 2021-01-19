@@ -11,14 +11,37 @@
 <body>
 
     <div id="principale"></div>
+    <script type="text/babel">
+    class App extends React.Component {
+        render(){
+            setInterval(() =>{
+                const date = new Date(Date.now());
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                let date_fr = date.toLocaleDateString('fr-FR', options);
+                date_fr += ` ${date.getHours()}H ${date.getMinutes()}min ${date.getSeconds()}sec`;
+                ReactDOM.render(<h1>React : Hello World [<span className="red">{date_fr}</span>]</h1>, document.getElementById('principale'));
+            }, 1000);
+            return true;
+        }
+    }
+
+    try{
+        ReactDOM.render(<App />, document.getElementById("principale"));
+    }catch(err){
+        console.error(err);
+    }
+   
+    </script>
 
     <script type="text/babel">
+/*
     setInterval(() =>{
         const date = new Date(Date.now());
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         const date_fr = date.toLocaleDateString('fr-FR', options);
         ReactDOM.render(<h1>React : Hello World [{date_fr}]</h1>, document.getElementById('principale'));
     }, 1000);
+*/
     </script>
 
 
