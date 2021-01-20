@@ -17,22 +17,21 @@
     <script type="text/babel">
     class App extends React.Component {
         render(){
-            ReactDOM.render(<h1>React : Hello World</h1>, document.getElementById('titre'));
+            const date = new Date(Date.now());
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            let date_fr = date.toLocaleDateString('fr-FR', options);
+            date_fr += ` ${date.getHours().padLeft()} H ${date.getMinutes().padLeft()} min ${date.getSeconds().padLeft()} sec`;
 
-            setInterval(() =>{
-                const date = new Date(Date.now());
-                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-                let date_fr = date.toLocaleDateString('fr-FR', options);
-                date_fr += ` ${date.getHours().padLeft()} H ${date.getMinutes().padLeft()} min ${date.getSeconds().padLeft()} sec`;
-                ReactDOM.render(<p className='red'>{date_fr}</p>, document.getElementById('date'));
-            }, 1000);
-
-            return true;
+            return (<><h1>React : Hello World</h1>
+            <p className='red'>{date_fr}</p></>);
         }
     }
 
     try{
-        ReactDOM.render(<App />, document.getElementById("principale"));
+        const timer = 1000;//setInterval 1 sec.: refresh de l'affichage toutes les secondes.
+        setInterval( () =>{
+            ReactDOM.render(<App />, document.getElementById("principale"));
+        }, timer);
     }catch(err){
         console.error(err);
     }
